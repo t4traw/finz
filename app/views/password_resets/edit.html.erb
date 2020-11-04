@@ -1,0 +1,17 @@
+<% content_for(:page_title) { "新しいパスワードを入力してください" } %>
+<% content_for(:page_summary) { "パスワードは英数を組み合わせて8文字以上で設定してください" } %>
+
+<div class="container">
+  <%= form_with(model: @user, url: password_reset_path(@token), method: :put, local: true) do |form| %>
+  <%= render partial: 'shared/form_error', locals: {form_object: @user} if @user.errors.any? %>
+
+  <div class="form-group">
+    <%= form.label :password, class: 'form-label' %>
+    <%= form.password_field :password, id: :user_password, class: 'form-input' %>
+  </div>
+
+  <div class="form-action">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      tackle: タックル
+    attributes:
+      tackle:
+        photo: 写真

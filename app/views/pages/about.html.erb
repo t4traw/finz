@@ -1,0 +1,40 @@
+<div class="-mt-8" style="background-image: url(/images/item_icons.png);">
+  <div class="container py-6">
+    <h1 class="font-bold pt-3 text-center">FINZはアングラーのタックルボックスなど、釣具や装備写真を共有するサービスです。</h1>
+    <h2 class="font-bold py-3 text-center">こだわりのケース収納・ランガンシステムなどなど、なんでも投稿してください！</h2>
+    <% unless current_user %>
+    <div class="text-center py-3">
+      <a href="<%= new_user_path %>" class="btn btn-link my-3">新規登録はこちら</a>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container py-8">
+  <div class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <% @tackles.each do |tackle| %>
+        <li class="splide__slide">
+          <a href="<%= tackle_path(tackle) %>">
+            <div class="square-image relative">
+              <img src="<%= tackle.photo.url %>" alt="">
+            </div>
+            <div class="absolute bottom-0 left-0 flex text-white">
+              <img src="<%= tackle.user.current_avatar %>" class="w-8 rounded-full" alt="">
+              <%= tackle.user.name %>
+            </div>
+          </a>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center py-4">
+    <a href="<%= tackles_path %>" class="border border-blue-500 px-4 py-2 rounded-full">最近の投稿一覧をみる</a>
+  </div>
+</div>
+
+<%= render partial: 'shared/add_tackle' %>
+
+<%= javascript_pack_tag 'splide', media: 'all' %>

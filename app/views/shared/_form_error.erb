@@ -1,0 +1,10 @@
+<div class="container mt-8">
+  <div class="p-3 bg-red-100 rounded">
+    <h2><%= form_object.errors.count %>件のエラーがあります。</h2>
+    <ul class="list-disc list-inside ml-2">
+      <% form_object.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

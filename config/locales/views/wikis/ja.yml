@@ -1,0 +1,46 @@
+ja:
+  wikis:
+    index:
+      title: Wikiのタイトル
+    settings: 
+      maintainer_level:
+        anyone: 誰でも
+        contributor: コントリビューター
+        moderator: モデレーター
+        administrator: 管理者
+      can_page_create_level:
+        label: "ページの作成が可能なユーザーレベル"
+        hint_header: "ページの作成"
+        hint_body: "ページの作成ができるユーザーの権限を設定します"
+      can_page_edit_level: 
+        label: "ページの編集が可能なユーザーレベル"
+        hint_header: "ページの編集"
+        hint_body: "ページの編集ができるユーザーの権限を設定します。また、ページの編集ができるユーザーは編集リクエストのマージもできます"
+      can_page_request_level: 
+        label: "編集リクエストが可能なユーザーレベル"
+        hint_header: "編集リクエスト"
+        hint_body: "編集リクエストができるユーザーの権限を設定します。誰でも編集リクエストが出せる状態を推奨します"
+      can_page_frozen_level: 
+        label: "ページ凍結が可能なユーザーレベル"
+        hint_header: "ページ凍結"
+        hint_body: "ページ凍結が可能なユーザーレベル"
+      can_page_archive_level: 
+        label: "ページアーカイブが可能なユーザーレベル"
+        hint_header: "ページアーカイブ"
+        hint_body: "ページアーカイブが可能なユーザーレベル"
+      can_navs_edit_level: 
+        label: "サイドバーが編集可能なユーザーレベル"
+        hint_header: "サイドバー編集"
+        hint_body: "サイドバー編集が可能なユーザーレベル"
+    maintainers:
+      index:
+        maintainers: メンテナー
+        remove_maintainer_link: メンテナーから除外
+        remove_maintainer_title: 本当にメンテナーから除外しますか？
+        remove_maintainer_body: メンテナーから外すと、このユーザーはメンテナーの管理・コントリビューターの管理・Wikiの設定にアクセスできなくなります。それでもよろしいですか？
+        remove_maintainer_cancel: キャンセル
+        watchers: ウォッチしているユーザー
+        add_maintainer_link: メンテナーに追加
+        add_maintainer_title: 本当にメンテナーに追加しますか？
+        add_maintainer_body: メンテナーに追加すると、このユーザーはメンテナーの管理・コントリビューターの管理・Wikiの設定にアクセスできるようになります。それでもよろしいですか？
+        add_maintainer_cancel: キャンセル

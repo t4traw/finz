@@ -1,0 +1,8 @@
+ja:
+  tackles:
+    create:
+      notice: '新しい写真を投稿しました'
+    update:
+      notice: '投稿の内容を更新しました'
+    destroy:
+      notice: '投稿を削除しました'

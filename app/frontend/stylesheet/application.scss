@@ -1,0 +1,110 @@
+.btn-original {
+  display: table;
+  padding: 6px 12px;
+  border-radius: 0.1rem;
+  width: fit-content;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  div.svg-icon {
+    display: table-cell;
+    vertical-align: middle;
+    height: 18px;
+    width: 24px;
+
+    svg {
+      display: table-cell;
+      margin-right: 8px;
+    }
+  }
+
+  span {
+    color: #fff;
+    font-size: 20px;
+  }
+
+  &.btn-twitter {
+    background-color: #1da1f2;
+  }
+
+  &.btn-discord {
+    background-color: #7289da;
+  }
+}
+
+$data-content-border-color: #888;
+$data-content-font-size: 0.8rem;
+$data-content-border-width: 1px;
+
+// Divider
+.divider,
+.divider-vert {
+  display: block;
+  position: relative;
+
+  &[data-content]::after {
+    background: #fff;
+    color: $data-content-border-color;
+    content: attr(data-content);
+    display: inline-block;
+    font-size: $data-content-font-size;
+    padding: 0 2px;
+    transform: translateY(-calc(calc($data-content-font-size + $data-content-border-width)));
+  }
+}
+
+.divider {
+  border-top: $data-content-border-width solid $data-content-border-color;
+  height: $data-content-border-width;
+  margin: 1rem 0;
+
+  &[data-content] {
+    margin: 4rem 0;
+  }
+}
+
+.divider-vert {
+  display: block;
+  padding: 1rem;
+
+  &::before {
+    border-left: $data-content-border-width solid $data-content-border-color;
+    bottom: 2rem;
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 2rem;
+    transform: translateX(-50%);
+  }
+
+  &[data-content]::after {
+    left: 50%;
+    padding: 2px 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.square-image {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.wave {
+  width: 100%;
+  height: 60px;
+  bottom: 0;
+  overflow: hidden;
+}
