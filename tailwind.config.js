@@ -1,8 +1,4 @@
 module.exports = {
-  purge: {
-    layers: ['base', 'components', 'utilities'],
-    content: ['./views/**/*.html', './views/**/*.erb']
-  },
   theme: {
     container: {
       center: true,

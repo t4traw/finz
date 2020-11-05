@@ -1,6 +1,8 @@
 const path = require('path')
 const WebpackAssetsManifest = require('webpack-assets-manifest')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 const { NODE_ENV } = process.env
 const isProd = NODE_ENV === 'production'
@@ -19,7 +21,7 @@ module.exports = {
     filename: isProd ? '[name]-[hash].js' : '[name].js'
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js']
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
@@ -36,6 +38,9 @@ module.exports = {
       filename: isProd ? '[name]-[hash].css' : '[name].css'
     })
   ],
+  optimization: {
+    minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin({})]
+  },
   module: {
     rules: [
       {
