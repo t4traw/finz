@@ -1,5 +1,5 @@
 <%= buoy_with_title :user_notice, {user: current_user}, title: "通知一覧" %>
 
 <div id="notice"></div>
-<%= javascript_pack_tag 'notice' %>
-<%= stylesheet_pack_tag 'notice' %>
+<%= javascript_pack_tag 'notice', defer: true %>
+<%= stylesheet_pack_tag 'notice', defer: true %>

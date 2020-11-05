@@ -113,7 +113,7 @@
     </div>
   </footer>
 
-  <%= javascript_pack_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application', media: 'all', defer: true %>
 
   <% flash.each do |message_type, message| %>
   <script>
