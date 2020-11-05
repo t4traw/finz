@@ -8,19 +8,19 @@
 
     <div class="field">
       <%= form.label :name, class: 'form-label' do %>ニックネーム
-      <%= form.text_field :name, id: :user_name, class: 'w-full mb-4', placeholder: 'ニックネームを入力' %>
+      <%= form.text_field :name, id: :user_name, class: 'input w-full mb-4', placeholder: 'ニックネームを入力' %>
       <% end %>
     </div>
 
     <div class="field">
       <%= form.label :email, class: 'form-label' do %>メールアドレス
-      <%= form.email_field :email, id: :user_email, class: 'w-full mb-4', placeholder: 'メールアドレスを入力' %>
+      <%= form.email_field :email, id: :user_email, class: 'input w-full mb-4', placeholder: 'メールアドレスを入力' %>
       <% end %>
     </div>
 
     <div class="field">
       <%= form.label :password, class: 'form-label' do %>パスワード
-      <%= form.password_field :password, id: :user_password, class: 'w-full mb-4', placeholder: 'パスワード(半角英数8文字以上)' %>
+      <%= form.password_field :password, id: :user_password, class: 'input w-full mb-4', placeholder: 'パスワード(半角英数8文字以上)' %>
       <% end %>
     </div>
 

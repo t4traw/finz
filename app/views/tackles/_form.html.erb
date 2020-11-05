@@ -34,7 +34,7 @@
       <%= form.label "タグを編集", class: "font-bold text-lg" %>
     </div>
     <div class="field w-full md:w-2/3">
-      <%= form.text_field :tag_list, value: @tackle.tag_list.join(',') %>
+      <%= form.text_field :tag_list, value: @tackle.tag_list.join(','), class: "input" %>
     </div>
   </div>
 
@@ -43,7 +43,7 @@
       <%= form.label :description, "コメント", class: "font-bold text-lg" %>
     </div>
     <div class="field w-full md:w-2/3">
-      <%= form.text_area :description, class: "w-full resize-none h-32" %>
+      <%= form.text_area :description, class: "input w-full resize-none h-32" %>
     </div>
   </div>
 
