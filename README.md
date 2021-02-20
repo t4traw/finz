@@ -6,7 +6,7 @@
 
 ## Requirements
 
-- ruby(2.6.3)
+- ruby(2.7.2)
 - nodejs(v14.4.0)
 - overmind
 
