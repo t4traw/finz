@@ -24,6 +24,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-preact": "^2.0.0",
     "css-loader": "^5.0.0",
+    "csshake": "^1.5.3",
     "cssnano": "^4.1.10",
     "date-utils": "^1.2.21",
     "eslint": "^7.11.0",

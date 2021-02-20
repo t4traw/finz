@@ -1,6 +1,7 @@
 require('@rails/ujs').start()
 
 import './stylesheet/application.scss'
+import './stylesheet/csshake.scss'
 import './stylesheet/tailwind.pcss'
 
 import './javascript/toggleHidden'
