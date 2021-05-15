@@ -33,7 +33,11 @@ module.exports = {
     }
   },
   plugins: [
-    new WebpackAssetsManifest({ publicPath: true, writeToDisk: true }),
+    new WebpackAssetsManifest({
+      output: 'manifest.json',
+      publicPath: true,
+      writeToDisk: true
+    }),
     new MiniCssExtractPlugin({
       filename: isProd ? '[name]-[hash].css' : '[name].css'
     })
