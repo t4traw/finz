@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_pack_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application', media: 'all' %>
 </head>
 
 <body>
@@ -112,8 +113,6 @@
       </div>
     </div>
   </footer>
-
-  <%= javascript_pack_tag 'application', media: 'all', defer: true %>
 
   <% flash.each do |message_type, message| %>
   <script>

@@ -34,3 +34,6 @@
 
 dump.rdb
 .env
+
+*.rdb
+.DS_Store
