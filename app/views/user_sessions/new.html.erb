@@ -1,7 +1,7 @@
 <% content_for(:page_title) { "ログイン" } %>
 <% content_for(:page_summary) { "今日は何か買っちゃいましたか？それとも何か釣れましたか？？" } %>
 
-<div class="container py-2 mx-auto md:flex">
+<div class="container py-2 mx-auto md:flex px-4">
   <div class="flex-1">
     <%= form_with(url: user_sessions_path, local: true, methods: :post, class: "w-full mx-auto pt-4 flex flex-col relative") do |form| %>
 

@@ -49,7 +49,7 @@
 
   <% if content_for?(:page_title) %>
   <div class="bg-gray-200 -mt-8">
-    <div class="container py-4 md:py-8">
+    <div class="container py-4 md:py-8 px-4">
       <h1 class="text-gray-900 text-xl mb-1 font-bold"><%= yield(:page_title) %></h1>
       <p class="text-gray-600 text-sm"><%= yield(:page_summary) %></p>
     </div>
@@ -72,7 +72,7 @@
       background: rgb(33,24,187);
       background: linear-gradient(0deg, rgba(93,165,255,1) 35%, rgba(89,185,249,1) 100%);
     ">
-      <div class="container">
+      <div class="container px-4">
         <div>
           <a href="/" class="">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 md:h-16" viewbox="0 0 302 160">

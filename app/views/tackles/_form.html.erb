@@ -1,7 +1,7 @@
 <%= form_with(model: tackle, local: true) do |form| %>
 <%= render partial: 'shared/form_error', locals: {form_object: tackle} if tackle.errors.any? %>
 
-<div class="container mx-auto py-8">
+<div class="container mx-auto py-8 px-4">
   <div class="md:flex pb-8">
     <div class="field w-full md:w-1/3 pr-4">
       <%= form.label "写真をアップロード", class: "font-bold text-lg" %>

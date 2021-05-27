@@ -1,7 +1,7 @@
 <% content_for(:page_title) { "ユーザー登録" } %>
 <% content_for(:page_summary) { "ユーザー登録をすると、自分のタックルボックスを投稿、コメントなどができるようになります！" } %>
 
-<div class="container py-2 mx-auto md:flex">
+<div class="container py-2 px-4 mx-auto md:flex">
   <div class="flex-1">
     <%= render partial: 'shared/form_error', locals: {form_object: @user} if @user.errors.any? %>
     <%= form_with(model: @user, local: true, class: "w-full mx-auto pt-4 flex flex-col relative") do |form| %>
@@ -51,7 +51,7 @@
   </div>
 </div>
 
-<div class="container py-2 pt-2 md:pt-8 m-auto">
+<div class="container py-2 px-4 md:pt-8 m-auto">
   <div class="menu-item">
     <%= link_to login_path do %>
     <i class="icon icon-link mr-1"></i>すでにアカウントを持っている方はこちら
