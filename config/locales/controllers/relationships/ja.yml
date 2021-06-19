@@ -1,0 +1,8 @@
+ja:
+  relationships:
+    create:
+      success: 'フォローしました'
+      failed: 'フォローに失敗しました'
+    destroy:
+      success: 'フォロー解除しました'
+      failed: 'フォロー解除失敗しました'
