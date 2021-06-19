@@ -3,7 +3,7 @@ require "application_system_test_case"
 class TacklesTest < ApplicationSystemTestCase
   setup do
     @user = FactoryBot.create(:user, :activated)
-    init_user(@user)
+    logged_user(@user)
   end
 
   test "ログインして投稿ボタンを押したら投稿ページに行ける" do
@@ -15,7 +15,7 @@ class TacklesTest < ApplicationSystemTestCase
   test "タックルの通常投稿ができる" do
     tackle = FactoryBot.build(:tackle, user: @user)
     visit(new_tackle_path)
-    file_path = Rails.root.join('test', 'factories', 'files', 'tackle_photo1.png')
+    file_path = Rails.root.join("test", "factories", "files", "tackle_photo1.png")
     attach_file("tackle[photo]", file_path, make_visible: true)
     click_on("登録する")
     assert_text("新しい写真を投稿しました")

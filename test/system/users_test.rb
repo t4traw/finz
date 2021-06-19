@@ -18,4 +18,25 @@ class UsersTest < ApplicationSystemTestCase
     click_button "登録"
     assert_text "確認メールを送信しました"
   end
+
+  test "ユーザーをフォローする事ができる" do
+    logged_user
+
+    follow_user = FactoryBot.create(:user, :activated)
+    visit user_path(follow_user)
+    click_button "フォロー"
+    sleep 0.5
+    assert_text "フォローしました"
+  end
+
+  test "ユーザーのフォローを解除する事ができる" do
+    logged_user
+
+    follow_user = FactoryBot.create(:user, :activated)
+    visit user_path(follow_user)
+    click_button "フォロー"
+    click_button "フォロー解除"
+    sleep 0.5
+    assert_text "フォロー解除しました"
+  end
 end

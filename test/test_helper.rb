@@ -4,7 +4,7 @@ require "rails/test_help"
 # require 'minitest/reporters'
 
 VCR.configure do |c|
-  c.cassette_library_dir = Rails.root.join('test', 'cassettes')
+  c.cassette_library_dir = Rails.root.join("test", "cassettes")
   c.hook_into :webmock
   # 必要に応じてfilterを作成する
   # c.filter_sensitive_data('<YOUR_SELLER_ID>') { ENV['YOUR_SELLER_ID'] }
@@ -18,7 +18,7 @@ VCR.configure do |c|
     match_requests_on: [:method, :path, :query, :body], # カセットを引き当てる条件
   }
   c.before_record do |i|
-    i.request.headers.delete('Authorization')
+    i.request.headers.delete("Authorization")
   end
 end
 
@@ -28,8 +28,8 @@ class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors)
 
-  def init_user(user = nil)
-    user ||= FactoryBot.create(:user)
+  def logged_user(user = nil)
+    user ||= FactoryBot.create(:user, :activated)
     visit(login_path)
     fill_in("email", with: user[:email])
     fill_in("password", with: "password")

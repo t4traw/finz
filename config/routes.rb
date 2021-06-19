@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get "logout", to: "user_sessions#destroy", as: :logout
   resources :user_sessions, only: [:create]
   resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :relationships, only: [:create, :destroy]
 
   resources :tackles do
     resources :comments, only: %w[create]

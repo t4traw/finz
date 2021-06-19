@@ -4,16 +4,19 @@
       <div class="mr-2"><img src="<%= @user.current_avatar %>" alt="" class="h-20 w-20 rounded-full"></div>
       <div class="flex-1">
         <p class="text-2xl font-bold"><%= @user.name %></p>
-        <p class="hidden">
-          <a href="#" class="border border-blue-500 text-blue-500 rounded px-1">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              class="w-4 h-4 -mt-1 inline">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-            </svg>
-            follow
-          </a>
-        </p>
+        <% unless current_user == @user %>
+          <% if current_user.following?(@user) %>
+            <%= form_with(url: relationship_path(@user), html: { method: :delete }) do |f| %>
+              <%= f.hidden_field :follow_id, value: @user.id %>
+              <%= f.submit 'フォロー解除', class: 'btn py-1' %>
+            <% end %>
+          <% else %>
+            <%= form_with(url: relationships_path) do |f| %>
+              <%= f.hidden_field :follow_id, value: @user.id %>
+              <%= f.submit 'フォロー', class: 'btn btn-link py-1' %>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <p class="text-gray-600 text-sm mt-4"><%= @user.profile %></p>
