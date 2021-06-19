@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_15_072327) do
+ActiveRecord::Schema.define(version: 2021_06_19_005626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 2021_05_15_072327) do
     t.index ["reply_id"], name: "index_comments_on_reply_id"
     t.index ["tackle_id"], name: "index_comments_on_tackle_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "follow_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follow_id"], name: "index_relationships_on_follow_id"
+    t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
+    t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
   create_table "tackles", force: :cascade do |t|
@@ -101,6 +111,8 @@ ActiveRecord::Schema.define(version: 2021_05_15_072327) do
   add_foreign_key "comments", "tackles"
   add_foreign_key "comments", "users"
   add_foreign_key "comments", "users", column: "reply_id"
+  add_foreign_key "relationships", "users"
+  add_foreign_key "relationships", "users", column: "follow_id"
   add_foreign_key "tackles", "users"
   add_foreign_key "taggings", "tags"
 end
