@@ -4,16 +4,18 @@
       <div class="mr-2"><img src="<%= @user.current_avatar %>" alt="" class="h-20 w-20 rounded-full"></div>
       <div class="flex-1">
         <p class="text-2xl font-bold"><%= @user.name %></p>
-        <% unless current_user == @user %>
-          <% if current_user.following?(@user) %>
-            <%= form_with(url: relationship_path(@user), html: { method: :delete }) do |f| %>
-              <%= f.hidden_field :follow_id, value: @user.id %>
-              <%= f.submit 'フォロー解除', class: 'btn py-1' %>
-            <% end %>
-          <% else %>
-            <%= form_with(url: relationships_path) do |f| %>
-              <%= f.hidden_field :follow_id, value: @user.id %>
-              <%= f.submit 'フォロー', class: 'btn btn-link py-1' %>
+        <% if current_user %>
+          <% unless current_user == @user %>
+            <% if current_user.following?(@user) %>
+              <%= form_with(url: relationship_path(@user), html: { method: :delete }) do |f| %>
+                <%= f.hidden_field :follow_id, value: @user.id %>
+                <%= f.submit 'フォロー解除', class: 'btn py-1' %>
+              <% end %>
+            <% else %>
+              <%= form_with(url: relationships_path) do |f| %>
+                <%= f.hidden_field :follow_id, value: @user.id %>
+                <%= f.submit 'フォロー', class: 'btn btn-link py-1' %>
+              <% end %>
             <% end %>
           <% end %>
         <% end %>
