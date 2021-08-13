@@ -29,5 +29,5 @@ class Tackle < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  validates :photo, presence: { message: 'が選択されていません。' }
+  validates :photo, presence: { message: "が選択されていません。" }
 end
